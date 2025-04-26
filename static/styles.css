@@ -1,0 +1,43 @@
+.center-text {
+	text-align: center;
+}
+
+.st-emotion-cache-1r4qj8v {
+	padding: 20px;
+}
+
+.st-emotion-cache-kgpedg {
+	display: none;
+}
+
+.block-container {
+	max-width: 1200px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.st-emotion-cache-1wivap2 {
+	width: 100%;
+	max-width: 600px;
+}
+
+section[data-testid="stSidebar"] {
+	padding: 20px;
+}
+
+html,
+body,
+[class*="css"] {
+	font-family: "Segoe UI", sans-serif;
+}
+
+h3 {
+	color: #3366cc;
+	margin-top: 10px;
+}
+
+.title {
+	margin-bottom: 0.2rem;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
