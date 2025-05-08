@@ -30,19 +30,17 @@ with st.sidebar:
     ]
     selected_main = st.selectbox("📚 Chọn chức năng", main_options)
 
-    # selected_chapter = None
-    # if selected_main == "Xử lý ảnh số":
-    #     selected_chapter = st.selectbox("📂 Chọn chương", [
-    #         "Chương 3: Chỉnh sửa ảnh cơ bản",
-    #         "Chương 4: Biến đổi ảnh",
-    #         "Chương 9: Nhận dạng và phân loại ảnh"
-    #     ])
-
 # --- Main Content ---
 if selected_main == "📄 Trang giới thiệu":
     st.markdown("""
         <div style="padding: 25px; border-radius: 10px; border: 1px solid #ddd;">
-            <h2>📄 Thông tin đồ án môn học</h2>
+            <h2>
+                📄 <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: bold;
+                        margin-bottom: 20px;">Thông tin đồ án môn học</span>
+            </h2>
             <h4>🧑‍🤝‍🧑 Thành viên nhóm:</h4>
             <ul style="font-size: 16px; line-height: 1.8; margin-left: 20px;">
                 <strong> <li>👨‍💻 Phạm Khánh Huy - 22110336</li> </strong>
@@ -77,30 +75,3 @@ else:
             exec(f.read(), globals())
     else:
         st.error(f"Không tìm thấy file: {file_path}")
-
-# elif selected_chapter:
-#     selected_chapter_key = {
-#         "Chương 3: Chỉnh sửa ảnh cơ bản": 3,
-#         "Chương 4: Biến đổi ảnh": 4,
-#         "Chương 9: Nhận dạng và phân loại ảnh": 9
-#     }[selected_chapter]
-
-#     selected_func = FUNCTIONS[5]
-#     chapter_info = selected_func["children"][selected_chapter_key]
-    
-#     st.markdown(f"## 📚 {chapter_info['label']}")
-#     st.markdown(chapter_info["description"])
-
-#     func_objs = chapter_info["functions"]
-#     numbered_labels = [f"{i + 1}. {func['label']}" for i, func in enumerate(func_objs.values())]
-#     label_to_file = {f"{i + 1}. {func['label']}": func["file"] for i, func in enumerate(func_objs.values())}
-
-#     selected_func_label = st.selectbox("🧪 Chọn bài học", numbered_labels)
-#     file_path = label_to_file[selected_func_label]
-
-#     if os.path.exists(file_path):
-#         with open(file_path, encoding="utf-8") as f:
-#             exec(f.read(), globals())
-#     else:
-#         st.error(f"Không tìm thấy file: {file_path}")
-

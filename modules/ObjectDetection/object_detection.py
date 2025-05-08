@@ -82,8 +82,17 @@ def drawPred(frame, classId, conf, left, top, right, bottom):
     cv2.putText(frame, label, (left, top), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0))
 
 def app():
-    st.title("🍎​ Object Detection")
-    st.write("This program detects 5 types of animals: capybara, hedgehog, kangaroo, panda, penguin.")
+    st.markdown("""
+            <div class="center-text">
+                <h2>✨ <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                    margin-bottom: 20px;">Nhận dang đối tượng</span>
+                </h2>
+            </div>
+        """, unsafe_allow_html=True)
+    
     st.sidebar.write("Browse an image, then click the 'Predict' button for detection.")
 
     img_file_buffer = st.file_uploader("Choose image", type=["bmp", "png", "jpg", "jpeg", "tif", "gif"])

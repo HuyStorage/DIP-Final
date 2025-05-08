@@ -46,3 +46,8 @@ def get_file_path(file_name):
     base_dir = os.path.abspath(os.path.join(static_dir, ".."))
     model_dir = os.path.join(base_dir, "models")
     return os.path.join(model_dir, file_name)
+
+def get_path(file_name):
+    static_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.abspath(os.path.join(static_dir, ".."))
+    return os.path.join(base_dir, file_name)

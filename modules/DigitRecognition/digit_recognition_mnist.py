@@ -60,7 +60,16 @@ if 'is_load' not in st.session_state:
 else:
     print('Đã load model và data rồi')
 
-st.markdown('<div class="center-text"><h2>✨ Nhận dạng chữ số (MNIST)</h2></div>', unsafe_allow_html=True)
+st.markdown("""
+                <div class="center-text">
+                    <h2>✨ <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: bold;
+                        margin-bottom: 20px;">Nhận dạng chữ số (MNIST)</span>
+                    </h2>
+                </div>
+            """, unsafe_allow_html=True)
 st.markdown('<div class="center-text" style="margin-bottom: 15px">Ứng dụng sử dụng mô hình học sâu để nhận dạng 100 chữ số viết tay ngẫu nhiên từ tập MNIST</div>', unsafe_allow_html=True)
 
 # Chia layout thành 2 cột

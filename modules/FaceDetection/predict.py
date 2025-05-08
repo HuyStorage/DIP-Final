@@ -4,6 +4,7 @@ import joblib
 import streamlit as st
 import os
 import tempfile
+import io
 from static.utils import *
 
 @st.cache_resource(show_spinner=False)
@@ -23,7 +24,7 @@ def load_models():
 
 
 recognizer, detector, svc = load_models()
-mydict = ["KhanhHuy", "KimLoi"]
+mydict = ["HongNhung", "KhanhHuy", "KimLoi", "NhutAnh", "SyCuong"]
 
 
 def checkValidFace(frame, face_box):
@@ -97,8 +98,16 @@ def app():
         result_container.empty()
         img_container.empty()
 
-    st.write("Nhận diện khuôn mặt từ webcam hoặc video, hiển thị tên đã huấn luyện hoặc 'Unknown'.")
-    st.markdown('<div class="center-text"><h2>🗿 Nhận dạng khuôn mặt</h2></div>', unsafe_allow_html=True)
+    st.markdown("""
+            <div class="center-text">
+                <h2>✨ <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                    margin-bottom: 20px;">Nhận dang khuôn mặt</span>
+                </h2>
+            </div>
+        """, unsafe_allow_html=True)
     st.markdown('<div class="center-text" style="margin-bottom: 15px">Nhận diện khuôn mặt từ webcam hoặc video, hiển thị tên đã huấn luyện hoặc "unknown".</div>', unsafe_allow_html=True)
 
     uploaded_containter = st.empty()
@@ -124,6 +133,10 @@ def app():
         uploaded_video = uploaded_containter.file_uploader(
             "Tải video lên", type=["mp4", "mov", "avi"]
         )
+        default_image_path = "test/face_detection_video.mp4"
+        if uploaded_video is None and default_image_path:
+            with open(default_image_path, "rb") as f:
+                uploaded_video = io.BytesIO(f.read()) 
 
         if uploaded_video:
             input_container.subheader("Input")

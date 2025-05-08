@@ -3,8 +3,17 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
-st.markdown('<div class="center-text"><h2>✨ Giải phương trình bậc 2</h2></div>', unsafe_allow_html=True)
-st.markdown('<div class="center-text" style="margin-bottom: 15px">Tính nghiệm của phương trình bậc 2 dạng \( ax^2 + bx + c = 0 \) và vẽ đồ thị</div>', unsafe_allow_html=True)
+st.markdown("""
+                <div class="center-text">
+                    <h2>✨ <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        font-weight: bold;
+                        margin-bottom: 20px;">Giải phương trình bậc 2</span>
+                    </h2>
+                </div>
+            """, unsafe_allow_html=True)
+st.markdown('<div class="center-text" style="margin-bottom: 15px">Tính nghiệm của phương trình bậc 2 dạng ( ax^2 + bx + c = 0) và vẽ đồ thị</div>', unsafe_allow_html=True)
 
 def gptb2(a, b, c):
     if a == 0:

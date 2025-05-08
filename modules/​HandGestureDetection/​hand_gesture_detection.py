@@ -388,7 +388,16 @@ def load_keypoint_classifier():
 
 
 def app():
-    st.markdown('<div class="center-text"><h2>🖐️ Nhận dạng cử chỉ tay</h2></div>', unsafe_allow_html=True)
+    st.markdown("""
+            <div class="center-text">
+                <h2>✨ <span style="background: linear-gradient(90deg, #3f51b5, #2196f3);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    font-weight: bold;
+                    margin-bottom: 20px;">Nhận dạng cử chỉ tay</span>
+                </h2>
+            </div>
+        """, unsafe_allow_html=True)
     st.markdown('<div class="center-text" style="margin-bottom: 15px">Ứng dụng sử dụng mô hình học sâu để nhận dạng cử chỉ tay theo thời gian thực.</div>', unsafe_allow_html=True)
     
     img_containter = st.empty()
@@ -398,7 +407,7 @@ def app():
         st.session_state.detecting = False
 
     if not st.session_state.detecting:
-        if st.button("▶️ Bắt đầu nhận diện"):
+        if st.button("▶️ Bắt đầu nhận dạng"):
             st.session_state.detecting = True
             st.rerun()
         if "captured_images" in st.session_state:
@@ -406,7 +415,7 @@ def app():
             for idx, img in enumerate(st.session_state.captured_images):
                 st.image(img, caption=f"Ảnh {idx + 1}", channels="BGR", use_container_width=True)
     else:
-        if st.button("🛑 Dừng nhận diện"):
+        if st.button("🛑 Dừng nhận dạng"):
             st.session_state.detecting = False
             st.rerun()
 
