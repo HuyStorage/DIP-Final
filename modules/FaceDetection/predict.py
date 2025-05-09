@@ -104,7 +104,7 @@ def app():
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     font-weight: bold;
-                    margin-bottom: 20px;">Nhận dang khuôn mặt</span>
+                    margin-bottom: 20px;">Nhận dạng khuôn mặt</span>
                 </h2>
             </div>
         """, unsafe_allow_html=True)
